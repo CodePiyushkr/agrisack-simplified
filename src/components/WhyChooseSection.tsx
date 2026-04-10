@@ -1,31 +1,46 @@
 import { Zap, Shield, Paintbrush, BarChart3, Users } from "lucide-react";
+import { useReveal } from "@/hooks/useReveal";
 
 const points = [
-  { icon: Zap, title: "Advanced Manufacturing Technology" },
-  { icon: Shield, title: "High Strength & Durability" },
-  { icon: Paintbrush, title: "Custom Design & Printing" },
-  { icon: BarChart3, title: "Bulk Production Capacity" },
-  { icon: Users, title: "Trusted by Multiple Industries" },
+  { icon: Zap, title: "Advanced Manufacturing", desc: "Cutting-edge technology for precision output" },
+  { icon: Shield, title: "High Durability", desc: "Built to withstand the toughest conditions" },
+  { icon: Paintbrush, title: "Custom Design", desc: "Printing and branding tailored to you" },
+  { icon: BarChart3, title: "Bulk Capacity", desc: "Millions of sacks produced every year" },
+  { icon: Users, title: "Industry Trusted", desc: "Serving 10+ major industries nationwide" },
 ];
 
-const WhyChooseSection = () => (
-  <section className="py-20 bg-secondary text-secondary-foreground">
-    <div className="container">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        Why Choose <span className="text-primary">AgriSack</span>
-      </h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-        {points.map((p) => (
-          <div key={p.title} className="text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
-              <p.icon className="w-7 h-7 text-primary" />
+const WhyChooseSection = () => {
+  const ref = useReveal();
+
+  return (
+    <section className="section-padding bg-muted relative overflow-hidden" ref={ref}>
+      <div className="container relative">
+        <div className="text-center mb-16 reveal">
+          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">Our Strength</span>
+          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
+            Why Choose <span className="text-gradient">AgriSack</span>
+          </h2>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 stagger-children">
+          {points.map((p, i) => (
+            <div key={p.title} className="reveal group text-center">
+              <div className="relative mx-auto mb-5">
+                <div className="w-20 h-20 rounded-3xl gradient-primary mx-auto flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:shadow-primary/30 transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-3">
+                  <p.icon className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-accent flex items-center justify-center text-xs font-bold text-accent-foreground border-2 border-background">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+              </div>
+              <h3 className="font-bold text-foreground mb-1">{p.title}</h3>
+              <p className="text-sm text-muted-foreground">{p.desc}</p>
             </div>
-            <h3 className="font-semibold text-sm text-secondary-foreground">{p.title}</h3>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default WhyChooseSection;
