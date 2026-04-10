@@ -1,29 +1,40 @@
-import { Play } from "lucide-react";
+import { useReveal } from "@/hooks/useReveal";
 
-const VideoSection = () => (
-  <section id="video" className="py-20 bg-background">
-    <div className="container text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-        Discover <span className="text-primary">AgriSack</span> in Action
-      </h2>
-      <p className="text-muted-foreground mb-10 max-w-2xl mx-auto">
-        Watch our manufacturing process and see the quality that sets us apart.
-      </p>
-      <a
-        href="https://www.youtube.com/@AgriSack"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative group block max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-xl"
-      >
-        <div className="aspect-video bg-secondary flex items-center justify-center">
-          <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center group-hover:scale-110 transition-transform">
-            <Play className="w-8 h-8 text-primary-foreground ml-1" />
+const VideoSection = () => {
+  const ref = useReveal();
+
+  return (
+    <section id="video" className="section-padding bg-muted relative overflow-hidden" ref={ref}>
+      <div className="absolute top-0 left-0 w-full h-1 gradient-primary" />
+
+      <div className="container">
+        <div className="text-center mb-12 reveal">
+          <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-3">See Us in Action</span>
+          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
+            Discover <span className="text-gradient">AgriSack</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Watch our manufacturing process and see the quality that sets us apart.
+          </p>
+        </div>
+
+        <div className="reveal-scale max-w-4xl mx-auto">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl glow-primary">
+            <div className="aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/xWcha86G6Yk?rel=0"
+                title="AgriSack Introduction Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-secondary/20 group-hover:bg-secondary/10 transition-colors" />
-      </a>
-    </div>
-  </section>
-);
+      </div>
+    </section>
+  );
+};
 
 export default VideoSection;
