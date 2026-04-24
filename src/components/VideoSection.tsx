@@ -31,6 +31,36 @@ const VideoSection = () => {
               />
             </div>
           </div>
+
+          {/* Watch More on YouTube CTA */}
+          <div className="reveal mt-12 flex justify-center">
+            <a
+              href="https://www.youtube.com/channel/UCNzAZqHYWTEtxcB4z6SKwHg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center gap-4 pl-3 pr-7 py-3 rounded-full bg-secondary text-primary-foreground font-bold text-base shadow-2xl hover:shadow-primary/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+            >
+              {/* Animated gradient sweep */}
+              <span className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+
+              {/* Play icon orb */}
+              <span className="relative flex items-center justify-center w-11 h-11 rounded-full bg-[#FF0000] shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <span className="absolute inset-0 rounded-full bg-[#FF0000] animate-ping opacity-40" />
+                <svg className="relative w-5 h-5 text-white ml-0.5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+
+              <span className="relative flex flex-col items-start leading-tight">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-primary/80 font-semibold">Subscribe</span>
+                <span className="text-base">Watch More on YouTube</span>
+              </span>
+
+              <svg className="relative w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
