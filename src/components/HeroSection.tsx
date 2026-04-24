@@ -7,7 +7,7 @@ const stats = [
   { value: "8+", label: "Years of Excellence", icon: Award },
   { value: "10+", label: "Industries Served", icon: Factory },
   { value: "500+", label: "Happy Clients", icon: Users },
-  { value: "584", label: "Sacks Produced", icon: Package },
+  { value: "584M", label: "Sacks Produced", icon: Package },
 ];
 
 const HeroSection = () => (
