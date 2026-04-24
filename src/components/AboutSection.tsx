@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/useReveal";
 import aboutImg from "@/assets/about-factory.jpg";
 
 const highlights = [
-  { icon: Factory, label: "Established April 2018", desc: "6+ years of industry experience" },
+  { icon: Factory, label: "Established April 2018", desc: "8+ years of industry experience" },
   { icon: Cog, label: "Advanced Machinery", desc: "State-of-the-art equipment" },
   { icon: Package, label: "Bulk Manufacturing", desc: "High volume production capacity" },
   { icon: Paintbrush, label: "Customized Solutions", desc: "Tailored to your needs" },
@@ -27,7 +27,7 @@ const AboutSection = () => {
             </div>
             {/* Floating card */}
             <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-5 shadow-xl glow-sm animate-float">
-              <div className="text-3xl font-black text-primary">6+</div>
+              <div className="text-3xl font-black text-primary">8+</div>
               <div className="text-sm font-medium text-foreground">Years of Excellence</div>
             </div>
           </div>

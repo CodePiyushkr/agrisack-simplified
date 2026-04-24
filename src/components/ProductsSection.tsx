@@ -1,4 +1,4 @@
-import { Package, ArrowRight } from "lucide-react";
+import { Package } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 
 const products = [
@@ -44,10 +44,7 @@ const ProductsSection = () => {
                   <Package className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{p.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
-                <div className="flex items-center gap-2 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             </div>
           ))}

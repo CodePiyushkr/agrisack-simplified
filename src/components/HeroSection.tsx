@@ -4,10 +4,10 @@ import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/agrisack-logo.png";
 
 const stats = [
-  { value: "6+", label: "Years of Excellence", icon: Award },
+  { value: "8+", label: "Years of Excellence", icon: Award },
   { value: "10+", label: "Industries Served", icon: Factory },
   { value: "500+", label: "Happy Clients", icon: Users },
-  { value: "1M+", label: "Sacks Produced", icon: Package },
+  { value: "584", label: "Sacks Produced", icon: Package },
 ];
 
 const HeroSection = () => (
