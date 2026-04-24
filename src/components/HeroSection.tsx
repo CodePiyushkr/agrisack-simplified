@@ -1,147 +1,195 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Play, Package, Factory, Award, Users, CheckCircle2 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import sacksImg from "@/assets/hero-sacks.jpg";
+import { ArrowRight, Play, ShieldCheck, Truck, Sparkles } from "lucide-react";
+import heroProduct from "@/assets/hero-product.jpg";
 
 const stats = [
-  { value: "8+", label: "Years of Excellence", icon: Award },
-  { value: "10+", label: "Industries Served", icon: Factory },
-  { value: "500+", label: "Happy Clients", icon: Users },
-  { value: "584M", label: "Sacks Produced", icon: Package },
+  { value: "8+", label: "Years" },
+  { value: "584M", label: "Sacks" },
+  { value: "10+", label: "Industries" },
+  { value: "500+", label: "Clients" },
+];
+
+const features = [
+  { icon: ShieldCheck, text: "ISO Certified Quality" },
+  { icon: Truck, text: "Pan-India Delivery" },
+  { icon: Sparkles, text: "Custom Printing" },
 ];
 
 const HeroSection = () => (
-  <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Background with parallax-like layers */}
-    <div className="absolute inset-0">
-      <img src={heroBg} alt="Factory" className="w-full h-full object-cover scale-110" width={1920} height={1080} />
-      <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/85 to-primary/30" />
-    </div>
+  <section id="home" className="relative min-h-screen bg-secondary overflow-hidden">
+    {/* Subtle grid background */}
+    <div
+      className="absolute inset-0 opacity-[0.04]"
+      style={{
+        backgroundImage:
+          "linear-gradient(hsl(var(--primary-foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary-foreground)) 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+      }}
+    />
 
-    {/* Animated geometric shapes */}
-    <div className="absolute top-1/4 -left-20 w-96 h-96 border border-primary/20 rounded-full animate-[spin_30s_linear_infinite]" />
-    <div className="absolute top-1/3 -left-10 w-72 h-72 border border-primary/10 rounded-full animate-[spin_25s_linear_infinite_reverse]" />
-    <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px]" />
-    <div className="absolute top-10 right-1/4 w-3 h-3 bg-primary rounded-full animate-float" />
-    <div className="absolute top-1/3 right-10 w-2 h-2 bg-primary/60 rounded-full animate-float" style={{ animationDelay: "1s" }} />
-    <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-primary/40 rounded-full animate-float" style={{ animationDelay: "2s" }} />
+    {/* Ambient glows */}
+    <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[120px] pointer-events-none" />
+    <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
-    {/* Diagonal accent line */}
-    <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden pointer-events-none">
-      <div className="absolute -top-1/2 -right-1/4 w-full h-[200%] bg-gradient-to-b from-primary/5 to-transparent rotate-12 origin-top-right" />
-    </div>
-
-    {/* Content */}
-    <div className="relative z-10 w-full py-32">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Text content */}
-          <div className="text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark text-primary text-sm font-medium mb-8 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-              </span>
+    <div className="relative z-10 container min-h-screen flex flex-col justify-center pt-28 pb-16">
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        {/* Left: Editorial text column */}
+        <div className="lg:col-span-7">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-8 animate-fade-in-up">
+            <div className="h-px w-10 bg-primary" />
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
               A Brand by Gopal Polytech
-            </div>
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-primary-foreground mb-6 leading-[0.95] tracking-tight animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-              Agri
-              <span className="relative inline-block text-primary">
-                Sack
-                <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
-                  <path d="M2 8C40 2 100 2 198 8" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" className="animate-[draw_1s_ease-out_0.8s_forwards]" strokeDasharray="200" strokeDashoffset="200" />
-                </svg>
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-3 font-heading font-semibold animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-              Your Trusted Packaging Partner
-            </p>
-
-            <p className="text-base md:text-lg text-primary-foreground/50 mb-10 max-w-lg animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-              Delivering Quality Since April 2018 — High-quality industrial sacks with precision, durability, and innovation.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-              <Button size="lg" className="text-base px-8 rounded-full glow-primary group" asChild>
-                <a href="#contact">
-                  Contact Us
-                  <ArrowDown className="w-4 h-4 ml-2 rotate-[-90deg] group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-base px-8 rounded-full border-primary/40 bg-primary-foreground/5 backdrop-blur-sm text-primary-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary gap-2 group"
-                asChild
-              >
-                <a href="#video">
-                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary group-hover:bg-primary-foreground/20 transition-colors">
-                    <Play className="w-3 h-3 text-primary-foreground fill-primary-foreground" />
-                  </span>
-                  Watch Video
-                </a>
-              </Button>
-            </div>
+            </span>
           </div>
 
-          {/* Right - Image showcase */}
-          <div className="hidden lg:flex items-center justify-center animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
-            <div className="relative">
-              {/* Glow */}
-              <div className="absolute -inset-8 bg-primary/20 rounded-3xl blur-[80px]" />
+          {/* Headline */}
+          <h1
+            className="font-black text-primary-foreground leading-[0.95] tracking-tight mb-6 animate-fade-in-up"
+            style={{ animationDelay: "0.1s", fontSize: "clamp(2.75rem, 7vw, 5.5rem)" }}
+          >
+            Industrial Sacks
+            <br />
+            <span className="text-gradient">Built to Endure.</span>
+          </h1>
 
-              {/* Decorative frame */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/40 rounded-2xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-primary/30 rounded-2xl" />
+          {/* Subhead */}
+          <p
+            className="text-lg md:text-xl text-primary-foreground/70 max-w-xl mb-8 leading-relaxed animate-fade-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            AgriSack manufactures premium woven, FIBC, and BOPP packaging trusted by leaders across agriculture, chemicals, and construction since 2018.
+          </p>
 
-              {/* Main image */}
-              <div className="relative w-[420px] h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-primary-foreground/10">
-                <img src={sacksImg} alt="AgriSack industrial woven sacks stacked in factory" className="w-full h-full object-cover" width={1024} height={1024} />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
+          {/* Feature pills */}
+          <div
+            className="flex flex-wrap gap-3 mb-10 animate-fade-in-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            {features.map((f) => (
+              <div
+                key={f.text}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/5 border border-primary-foreground/10 text-primary-foreground/80 text-sm"
+              >
+                <f.icon className="w-4 h-4 text-primary" />
+                {f.text}
               </div>
+            ))}
+          </div>
 
-              {/* Floating badge top */}
-              <div className="absolute -top-5 -right-5 glass rounded-2xl px-4 py-3 shadow-2xl animate-float">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-primary" />
-                  <div>
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">ISO Quality</div>
-                    <div className="text-sm font-bold text-foreground">Certified</div>
-                  </div>
+          {/* CTAs */}
+          <div
+            className="flex flex-col sm:flex-row gap-4 mb-14 animate-fade-in-up"
+            style={{ animationDelay: "0.4s" }}
+          >
+            <Button size="lg" className="text-base px-8 h-14 rounded-full glow-primary group" asChild>
+              <a href="#contact">
+                Request a Quote
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="ghost"
+              className="text-base px-6 h-14 rounded-full text-primary-foreground hover:bg-primary-foreground/10 gap-3 group"
+              asChild
+            >
+              <a href="#video">
+                <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground group-hover:scale-110 transition-transform">
+                  <Play className="w-4 h-4 fill-current ml-0.5" />
+                </span>
+                Watch Our Story
+              </a>
+            </Button>
+          </div>
+
+          {/* Inline stats — minimal editorial style */}
+          <div
+            className="flex flex-wrap items-center gap-x-10 gap-y-6 pt-8 border-t border-primary-foreground/10 animate-fade-in-up"
+            style={{ animationDelay: "0.5s" }}
+          >
+            {stats.map((s) => (
+              <div key={s.label}>
+                <div className="text-3xl md:text-4xl font-black text-primary-foreground leading-none">
+                  {s.value}
+                </div>
+                <div className="text-xs uppercase tracking-widest text-primary-foreground/50 mt-2">
+                  {s.label}
                 </div>
               </div>
-
-              {/* Floating badge bottom */}
-              <div className="absolute -bottom-6 -left-6 glass rounded-2xl px-4 py-3 shadow-2xl animate-float" style={{ animationDelay: "1.5s" }}>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
-                    <Package className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <div className="text-lg font-black text-foreground leading-none">Bulk</div>
-                    <div className="text-[11px] text-muted-foreground">Manufacturing</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
-        {/* Stats strip - glassmorphism cards */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-          {stats.map((s) => (
-            <div key={s.label} className="group relative text-center p-6 rounded-2xl glass-dark hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
-              <s.icon className="w-5 h-5 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <div className="text-3xl md:text-4xl font-black text-primary mb-1">{s.value}</div>
-              <div className="text-xs md:text-sm text-primary-foreground/60">{s.label}</div>
+        {/* Right: Product showcase */}
+        <div
+          className="lg:col-span-5 hidden lg:block animate-fade-in-up"
+          style={{ animationDelay: "0.3s" }}
+        >
+          <div className="relative">
+            {/* Number marker */}
+            <div className="absolute -top-6 -left-6 z-20 text-[7rem] font-black leading-none text-primary/20 select-none">
+              01
             </div>
-          ))}
+
+            {/* Vertical label */}
+            <div className="absolute -left-12 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
+              <span className="text-[10px] uppercase tracking-[0.4em] text-primary-foreground/40 [writing-mode:vertical-rl] rotate-180">
+                Premium · Durable · Certified
+              </span>
+            </div>
+
+            {/* Image card */}
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-primary-foreground/10">
+              <img
+                src={heroProduct}
+                alt="Premium AgriSack FIBC jumbo bag in industrial warehouse"
+                className="w-full h-[600px] object-cover"
+                width={960}
+                height={1280}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent" />
+
+              {/* Bottom caption inside image */}
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
+                      Featured Product
+                    </div>
+                    <div className="text-xl font-bold text-primary-foreground">
+                      FIBC Jumbo Bags
+                    </div>
+                  </div>
+                  <a
+                    href="#products"
+                    className="shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+                    aria-label="See all products"
+                  >
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating quality badge */}
+            <div className="absolute -bottom-6 -right-6 glass rounded-2xl px-5 py-4 shadow-2xl animate-float">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-xl gradient-primary flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
+                    Quality
+                  </div>
+                  <div className="text-sm font-bold text-foreground">ISO Certified</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </section>
 );
 
