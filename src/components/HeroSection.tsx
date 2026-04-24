@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Play, Package, Factory, Award, Users } from "lucide-react";
+import { ArrowDown, Play, Package, Factory, Award, Users, CheckCircle2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import logo from "@/assets/agrisack-logo.png";
+import sacksImg from "@/assets/hero-sacks.jpg";
 
 const stats = [
   { value: "8+", label: "Years of Excellence", icon: Award },
@@ -73,12 +73,12 @@ const HeroSection = () => (
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base px-8 rounded-full border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 gap-2 group"
+                className="text-base px-8 rounded-full border-primary/40 bg-primary-foreground/5 backdrop-blur-sm text-primary-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary gap-2 group"
                 asChild
               >
                 <a href="#video">
-                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary/20 group-hover:bg-primary/30 transition-colors">
-                    <Play className="w-3 h-3 text-primary fill-primary" />
+                  <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-primary group-hover:bg-primary-foreground/20 transition-colors">
+                    <Play className="w-3 h-3 text-primary-foreground fill-primary-foreground" />
                   </span>
                   Watch Video
                 </a>
@@ -86,19 +86,44 @@ const HeroSection = () => (
             </div>
           </div>
 
-          {/* Right - Logo showcase with glow */}
+          {/* Right - Image showcase */}
           <div className="hidden lg:flex items-center justify-center animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
             <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-[80px] scale-150 animate-pulse" />
-              <div className="relative w-80 h-80 rounded-full glass-dark flex items-center justify-center border-2 border-primary/20 p-8">
-                <img src={logo} alt="AgriSack Logo" className="w-full h-full object-contain drop-shadow-2xl animate-float" />
+              {/* Glow */}
+              <div className="absolute -inset-8 bg-primary/20 rounded-3xl blur-[80px]" />
+
+              {/* Decorative frame */}
+              <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/40 rounded-2xl" />
+              <div className="absolute -bottom-4 -right-4 w-32 h-32 border-2 border-primary/30 rounded-2xl" />
+
+              {/* Main image */}
+              <div className="relative w-[420px] h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-primary-foreground/10">
+                <img src={sacksImg} alt="AgriSack industrial woven sacks stacked in factory" className="w-full h-full object-cover" width={1024} height={1024} />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/60 via-transparent to-transparent" />
               </div>
-              {/* Orbiting dots */}
-              <div className="absolute inset-0 animate-[spin_15s_linear_infinite]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full shadow-lg shadow-primary/50" />
+
+              {/* Floating badge top */}
+              <div className="absolute -top-5 -right-5 glass rounded-2xl px-4 py-3 shadow-2xl animate-float">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-primary" />
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">ISO Quality</div>
+                    <div className="text-sm font-bold text-foreground">Certified</div>
+                  </div>
+                </div>
               </div>
-              <div className="absolute inset-[-20px] animate-[spin_20s_linear_infinite_reverse]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary/60 rounded-full" />
+
+              {/* Floating badge bottom */}
+              <div className="absolute -bottom-6 -left-6 glass rounded-2xl px-4 py-3 shadow-2xl animate-float" style={{ animationDelay: "1.5s" }}>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
+                    <Package className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-lg font-black text-foreground leading-none">Bulk</div>
+                    <div className="text-[11px] text-muted-foreground">Manufacturing</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -117,13 +142,6 @@ const HeroSection = () => (
       </div>
     </div>
 
-    {/* Scroll indicator */}
-    <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary-foreground/40 hover:text-primary transition-colors">
-      <span className="text-xs uppercase tracking-widest">Scroll</span>
-      <div className="w-5 h-8 rounded-full border-2 border-current flex items-start justify-center p-1">
-        <div className="w-1 h-2 bg-current rounded-full animate-bounce" />
-      </div>
-    </a>
   </section>
 );
 
