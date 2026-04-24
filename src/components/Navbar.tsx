@@ -23,11 +23,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "glass shadow-lg py-2"
-          : "bg-transparent py-4"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-background shadow-md py-2 border-b border-border"
     >
       <div className="container flex items-center justify-between">
         <a href="#home" className="relative group">
@@ -38,20 +34,14 @@ const Navbar = () => {
             <a
               key={l.href}
               href={l.href}
-              className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                scrolled
-                  ? "text-foreground hover:text-primary hover:bg-accent"
-                  : "text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10"
-              }`}
+              className="relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 text-foreground hover:text-primary hover:bg-accent"
             >
               {l.label}
             </a>
           ))}
         </div>
         <button
-          className={`md:hidden p-2 rounded-lg transition-colors ${
-            scrolled ? "text-foreground" : "text-primary-foreground"
-          }`}
+          className="md:hidden p-2 rounded-lg transition-colors text-foreground"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
