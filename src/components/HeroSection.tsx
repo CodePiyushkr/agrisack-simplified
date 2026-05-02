@@ -172,17 +172,17 @@ const HeroSection = () => (
               </div>
             </div>
 
-            {/* Floating quality badge */}
+            {/* Floating heritage badge */}
             <div className="absolute -bottom-6 -right-6 glass rounded-2xl px-5 py-4 shadow-2xl animate-float">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-xl gradient-primary flex items-center justify-center">
                   <ShieldCheck className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">
-                    Quality
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">
+                    A Unit of Gopal Flexo Group
                   </div>
-                  <div className="text-sm font-bold text-foreground">ISO Certified</div>
+                  <div className="text-sm font-bold text-foreground">Trusted Since 1990</div>
                 </div>
               </div>
             </div>
