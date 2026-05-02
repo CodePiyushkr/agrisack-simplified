@@ -12,7 +12,7 @@ const socials = [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/agrisackglobal/", color: "hover:bg-[hsl(326,78%,48%)]" },
   { icon: PinterestIcon, label: "Pinterest", href: "https://in.pinterest.com/agrisackglobal/", color: "hover:bg-[hsl(351,86%,45%)]" },
   { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@agrisackglobal", color: "hover:bg-[hsl(0,100%,50%)]" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/agrisackglobal", color: "hover:bg-[hsl(201,100%,35%)]" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/agrisack-by-gopal-polytech/", color: "hover:bg-[hsl(201,100%,35%)]" },
 ];
 
 const SocialSection = () => {

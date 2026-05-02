@@ -19,7 +19,7 @@ const socialIcons = [
   { icon: Instagram, href: "https://www.instagram.com/agrisackglobal/" },
   { icon: PinterestIcon, href: "https://in.pinterest.com/agrisackglobal/" },
   { icon: Youtube, href: "https://www.youtube.com/@agrisackglobal" },
-  { icon: Linkedin, href: "https://www.linkedin.com/company/agrisackglobal" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/agrisack-by-gopal-polytech/" },
 ];
 
 const Footer = () => (
