@@ -81,7 +81,7 @@ const Footer = () => (
           AgriSack by Gopal Polytech © 2018–2026. All Rights Reserved.
         </p>
         <p className="text-xs text-secondary-foreground/30">
-          Developed by Rudraksh Services
+          Developed by <a href="https://rudrakshservices.com/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors underline-offset-2 hover:underline">Rudraksh Services</a>
         </p>
       </div>
     </div>
