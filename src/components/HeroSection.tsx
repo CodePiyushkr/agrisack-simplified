@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Truck, Sparkles, Factory, Award } from "lucide-react";
-import heroProduct from "@/assets/hero-product.jpg";
+
 
 const stats = [
   { value: "8+", label: "Years" },
@@ -127,50 +127,73 @@ const HeroSection = () => (
           </div>
         </div>
 
-        {/* Right: Product showcase */}
+        {/* Right: Heritage panel */}
         <div
           className="lg:col-span-5 hidden lg:block animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
           <div className="relative">
-            {/* Image card */}
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-primary-foreground/10">
-              <img
-                src={heroProduct}
-                alt="Premium AgriSack FIBC jumbo bag in industrial warehouse"
-                className="w-full h-[620px] object-cover"
-                width={960}
-                height={1280}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/30 to-transparent" />
+            {/* Decorative number */}
+            <div className="absolute -top-10 -right-4 text-[12rem] font-black leading-none text-primary/10 select-none pointer-events-none">
+              35+
+            </div>
 
-              {/* Top corner tag */}
-              <div className="absolute top-5 left-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-[0.2em] shadow-lg">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
-                Featured
-              </div>
+            <div className="relative rounded-[2rem] p-10 border border-primary-foreground/10 bg-gradient-to-br from-primary-foreground/[0.06] to-primary-foreground/[0.01] backdrop-blur-sm shadow-2xl overflow-hidden">
+              {/* Corner accent */}
+              <div className="absolute top-0 left-0 w-24 h-24 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
 
-              {/* Bottom caption inside image */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <div className="flex items-end justify-between gap-4">
+              <div className="relative">
+                {/* Crest */}
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center shadow-lg glow-primary">
+                    <Award className="w-7 h-7 text-primary-foreground" />
+                  </div>
+                  <div className="flex-1 h-px bg-gradient-to-r from-primary/60 to-transparent" />
+                </div>
+
+                {/* Eyebrow */}
+                <div className="text-[11px] font-semibold uppercase tracking-[0.3em] text-primary mb-4">
+                  Our Heritage
+                </div>
+
+                {/* Headline */}
+                <h2 className="font-black text-primary-foreground leading-[1.05] text-4xl xl:text-5xl mb-6">
+                  A Unit of
+                  <br />
+                  <span className="text-gradient">Gopal Flexo Group</span>
+                </h2>
+
+                <div className="h-px w-16 bg-primary mb-6" />
+
+                {/* Trusted since */}
+                <div className="flex items-baseline gap-4 mb-8">
+                  <div className="text-[10px] uppercase tracking-[0.3em] text-primary-foreground/50">
+                    Trusted Since
+                  </div>
+                  <div className="text-5xl font-black text-primary-foreground leading-none">
+                    1990
+                  </div>
+                </div>
+
+                <p className="text-sm text-primary-foreground/60 leading-relaxed mb-8">
+                  Three decades of engineering excellence in flexible packaging — from family workshop to industry leader.
+                </p>
+
+                {/* Heritage stats */}
+                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-primary-foreground/10">
                   <div>
-                    <div className="text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
-                      Flagship Product
-                    </div>
-                    <div className="text-2xl font-black text-primary-foreground leading-tight">
-                      FIBC Jumbo Bags
-                    </div>
-                    <div className="text-xs text-primary-foreground/60 mt-1">
-                      Up to 2000 kg load capacity
+                    <div className="text-2xl font-black text-primary-foreground leading-none">35+</div>
+                    <div className="text-[10px] uppercase tracking-widest text-primary-foreground/50 mt-2">
+                      Years of Legacy
                     </div>
                   </div>
-                  <a
-                    href="#products"
-                    className="shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
-                    aria-label="See all products"
-                  >
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
+                  <div>
+                    <div className="text-2xl font-black text-primary-foreground leading-none">3</div>
+                    <div className="text-[10px] uppercase tracking-widest text-primary-foreground/50 mt-2">
+                      Generations Strong
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
