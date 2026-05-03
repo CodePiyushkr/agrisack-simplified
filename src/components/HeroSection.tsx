@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Truck, Sparkles, Factory, Award } from "lucide-react";
-import heroProduct from "@/assets/hero-product.jpg";
+
 
 const stats = [
   { value: "8+", label: "Years" },
