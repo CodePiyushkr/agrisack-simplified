@@ -30,8 +30,8 @@ const Footer = () => (
       <div className="grid md:grid-cols-3 gap-12 items-start">
         {/* Brand */}
         <div>
-          <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg">
-            <img src={logo} alt="AgriSack" className="h-20" />
+          <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center mb-4 shadow-lg p-4">
+            <img src={logo} alt="AgriSack" className="max-h-full max-w-full object-contain" />
           </div>
           <p className="text-secondary-foreground/50 text-sm leading-relaxed">
             Your Trusted Packaging Partner — delivering quality industrial sacks since 2018.
